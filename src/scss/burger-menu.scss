@@ -1,0 +1,219 @@
+.menu-burger {
+  position: absolute;
+  top:0;
+  left:0;
+  background: $dopBgColor;
+   overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   
+   
+    width: 100%;
+
+		&__section {
+       padding: 0 16px;
+      display: flex;
+		}
+    @media (min-width: 360px) {
+   &__section {
+      padding: 0 24px;
+   }
+}
+}
+   @media (min-width: 360px){
+    .menu-burger{
+      width: 360px;
+      float:left;
+    }
+   }
+
+.container {
+  padding-bottom: 32px;
+
+}
+.section-head {
+ 
+   align-items:center;
+   justify-content:space-between;
+  min-height: 88px;
+
+		&__left {
+   display: flex;
+   column-gap: 16px;
+   justify-content: center;
+   align-items: center;
+
+		}
+
+		&__burger-close {
+		}
+
+		&__logo {
+		}
+
+		&__right {
+		}
+
+		&__search {
+		}
+}
+.burger-close {
+
+		&__link {
+		}
+}
+.logo {
+
+		&__link {
+		}
+
+		&__img {
+		}
+}
+.search {
+
+		&__link {
+		}
+}
+.section-nav {
+  display: inline-flex;
+   flex-direction: column;
+   gap: 32px;
+   min-width: fit-content;
+
+
+		&__nav {
+		}
+}
+.burger-nav {
+  display: inline-flex;
+   flex-direction: column;
+		&__btn::before{
+    content: '';
+     position: relative;
+    left:10px;
+    top:13px;
+   border-right: 4px solid $elementColor;
+   background: $elementColor;
+   width: 8px;
+   height: 32px;
+   border-radius: 5px;
+   transform: translate(-35px);
+   transition-duration: 1ms;
+   opacity: 0;
+} 
+ @media (min-width: 360px) {
+  &__btn::before{
+   
+      left:3px;
+   }
+  }
+   
+  &__btn:hover::before{
+    opacity: 1;
+    
+  }
+}
+
+.btn {
+  display: inline-flex;
+  border: none;
+  background: $dopBgColor;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.20000000298023224px;
+  padding: 0;
+
+}
+.btn p:hover{
+  opacity: 0.5;
+  transition-duration: 500ms;
+}
+
+
+.section-burger-footer {
+  
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 12px;
+   padding: 0 16px;
+
+		&__contact {
+         display: flex;
+  
+   gap: 16px;
+		}
+
+		&__lang {
+		}
+}
+@media (min-width: 360px){
+.section-burger-footer {
+  padding: 0 24px;
+}
+}
+.contact {
+
+		&__email {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.20000000298023224px;
+      text-align: left;
+		}
+
+		&__number {
+height: 32px;
+top: calc(50% - 32px/2 + 400px);
+font-size: 24px;
+line-height: 32px;
+letter-spacing: -0.6px;
+font-weight: 900;
+}
+}
+
+.call {
+
+		&__link {
+		}
+
+		&__img {
+		}
+}
+.chat {
+
+		&__link {
+		}
+
+		&__img {
+		}
+}
+.profile {
+
+		&__link {
+		}
+
+		&__img {
+		}
+}
+.email {
+}
+.number {
+}
+.lang {
+  display: flex;
+  gap: 7px;
+
+		&__btn {
+		}
+}
+.menu-burger--open{
+  
+  left:0;
+  z-index: 1;
+  
+}
+.menu-burger--closer{
+  left:-100%;
+}
