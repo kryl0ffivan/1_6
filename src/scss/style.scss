@@ -15,5 +15,10 @@ body {
   font-family: 'TT Lakes';
   background-color: $bgColor;
   color: $text;
+  opacity: 1;
+}
+.opacity{
+  opacity: 0.1;
+  transition-duration: 1s;
 }
 

@@ -30,6 +30,12 @@ $shadowColor: rgba(217, 255, 245, 1);
       padding: 0 24px;
     }
 }
+@media (min-width: 1366px) {
+    .header{
+      display:none;
+    }
+}
+
 .section {
     @media (min-width: 425px){
 		&__burger {
