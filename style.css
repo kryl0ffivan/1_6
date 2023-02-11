@@ -350,6 +350,10 @@ template {
   .header {
     padding: 0 24px; } }
 
+@media (min-width: 1366px) {
+  .header {
+    display: none; } }
+
 @media (min-width: 425px) {
   .section__burger {
     display: flex;
@@ -387,13 +391,14 @@ template {
 .menu-burger {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   background: #FFFFFF;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%; }
+  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+  width: 100%;
+  height: 100%; }
   .menu-burger__section {
     padding: 0 16px;
     display: flex; }
@@ -406,8 +411,11 @@ template {
     width: 360px;
     float: left; } }
 
-.container {
-  padding-bottom: 32px; }
+@media (min-width: 1366px) {
+  .menu-burger {
+    position: static;
+    width: 320px;
+    box-shadow: none; } }
 
 .section-head {
   align-items: center;
@@ -420,13 +428,23 @@ template {
     justify-content: center;
     align-items: center; }
 
+@media (min-width: 1366px) {
+  .burger-close {
+    display: none; } }
+
 .section-nav {
   display: inline-flex;
   flex-direction: column;
   gap: 32px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
-  min-width: fit-content; }
+  min-width: fit-content;
+  padding-bottom: 32px; }
+
+@media (min-width: 768px) {
+  .section-nav {
+    padding-top: 24px;
+    padding-bottom: 268px; } }
 
 .burger-nav {
   display: inline-flex;
@@ -496,16 +514,27 @@ template {
   gap: 7px; }
 
 .menu-burger--open {
+  position: absolute;
+  top: 0;
   left: 0;
-  z-index: 1; }
+  z-index: 1;
+  transition-duration: 500ms; }
 
 .menu-burger--closer {
-  left: -100%; }
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition-duration: 700ms; }
 
 body {
   font-family: 'TT Lakes';
   background-color: #FFFFFF;
-  color: #1B1C21; }
+  color: #1B1C21;
+  opacity: 1; }
+
+.opacity {
+  opacity: 0.1;
+  transition-duration: 1s; }
 
 
 /*# sourceMappingURL=style.css.map*/
