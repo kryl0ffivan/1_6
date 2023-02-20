@@ -1,3 +1,10 @@
+@charset "UTF-8";
+.section__status::before {
+  border-right: 2px solid #EAEAEA;
+  background: #EAEAEA;
+  height: 32px;
+  border-radius: 1px; }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -325,12 +332,6 @@ template {
   font-weight: bold;
   font-style: normal; }
 
-.section__status::before {
-  border-right: 2px solid #EAEAEA;
-  background: #EAEAEA;
-  height: 32px;
-  border-radius: 1px; }
-
 .header {
   background: #FFFFFF;
   box-shadow: 0 1px 0 0 #d9fff5;
@@ -379,26 +380,28 @@ template {
   .section__contact {
     display: flex; } }
 
-.section__status {
+.section__status::before {
+  content: ''; }
+
+.status {
   display: flex;
   -moz-column-gap: 16px;
        column-gap: 16px;
   justify-content: center;
   align-items: center; }
-  .section__status::before {
-    content: ''; }
 
 .menu-burger {
   position: absolute;
   top: 0;
   left: -100%;
   background: #FFFFFF;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  z-index: 1;
+  overflow: auto; }
   .menu-burger__section {
     padding: 0 16px;
     display: flex; }
@@ -413,9 +416,11 @@ template {
 
 @media (min-width: 1366px) {
   .menu-burger {
-    position: static;
+    position: sticky;
     width: 320px;
-    box-shadow: none; } }
+    box-shadow: none;
+    height: 100%;
+    overflow: hidden; } }
 
 .section-head {
   align-items: center;
@@ -526,15 +531,223 @@ template {
   left: -100%;
   transition-duration: 700ms; }
 
+.main {
+  background-color: #F8F8F8; }
+
+.head__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 24px 16px; }
+
+@media (min-width: 768px) {
+  .head__container {
+    padding: 24px 24px; } }
+
+@media (min-width: 1366px) {
+  .head__container {
+    padding-top: 42px;
+    padding-bottom: 15px; } }
+
+.head__title {
+  position: relative;
+  display: flex;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px;
+  color: #1B1C21; }
+  .head__title::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 4px;
+    border-right: 4px solid #41F6D7;
+    background: #41F6D7;
+    width: 8px;
+    height: 32px;
+    border-radius: 5px;
+    transform: translate(-35px);
+    transition-duration: 1ms; }
+  @media (min-width: 768px) {
+    .head__title::before {
+      left: 4px; } }
+
+.head__status {
+  display: none;
+  align-items: center;
+  -moz-column-gap: 32px;
+       column-gap: 32px; }
+
+@media (min-width: 1366px) {
+  .head__status {
+    display: flex;
+    -moz-column-gap: 32px;
+         column-gap: 32px; } }
+
+.submit-head {
+  background: none;
+  border: 0; }
+  .submit-head::before {
+    content: 'Оставить заявку';
+    position: relative;
+    top: -13px;
+    left: -8px;
+    font-size: 16px;
+    letter-spacing: -0.2px; }
+
+.check-status-head {
+  background: none;
+  border: 0; }
+  .check-status-head::before {
+    content: 'Статус ремонта';
+    position: relative;
+    top: -13px;
+    left: -8px;
+    font-size: 16px;
+    letter-spacing: -0.2px; }
+
+::-webkit-scrollbar {
+  width: 0; }
+
+.side-main {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: auto;
+  padding-top: 24px; }
+  .side-main__btn {
+    background: #F8F8F8;
+    font-size: 16px;
+    line-height: 24px;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    text-align: center;
+    padding: 8px 9px 8px 16px;
+    color: #7E7E82;
+    border: 2px solid transparent; }
+    .side-main__btn:hover {
+      border: 2px solid  #B8FFEC;
+      background: #FFFFFF;
+      border-radius: 6px; }
+
+@media (min-width: 768px) {
+  .side-main {
+    padding-top: 32px; } }
+
+@media (min-width: 1366px) {
+  .side-main {
+    flex-wrap: wrap;
+    padding-top: 8px; } }
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 16px; }
+  .content__section {
+    padding-bottom: 16px; }
+
+@media (min-width: 768px) {
+  .content {
+    padding: 0 24px; } }
+
+@media (min-width: 1366px) {
+  .content {
+    padding: 0 34px; } }
+
+@media (min-width: 768px) {
+  .main-content {
+    gap: 16px; } }
+
+.text {
+  width: 288px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px; }
+  .text__limiter-btn {
+    padding-top: 16px;
+    display: flex;
+    background: none;
+    gap: 16px;
+    border: none;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px; }
+    .text__limiter-btn::before {
+      content: '';
+      position: relative;
+      top: 5px;
+      background: url(./static/ic-expand-down.svg) no-repeat;
+      width: 7.41px;
+      height: 10.29px; }
+
+.text--height {
+  height: 90px; }
+
+.text__limiter-btn--closer {
+  padding-top: 16px;
+  display: flex;
+  background: none;
+  gap: 16px;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px; }
+  .text__limiter-btn--closer::before {
+    content: '';
+    position: relative;
+    top: 5px;
+    background: url(./static/ic-expand-up.svg) no-repeat;
+    width: 7.41px;
+    height: 10.29px; }
+
+@media (min-width: 768px) {
+  .text {
+    width: 312px; }
+    .text__limiter-btn {
+      padding-top: 10px; }
+  .text--height {
+    height: 160px; } }
+
+@media (min-width: 1366px) {
+  .text {
+    padding-top: 20px; } }
+
+.main-content__img {
+  background-image: url(./static/Mask.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-height: 176px;
+  min-width: 320px; }
+
+@media (min-width: 768px) {
+  .main-content__img {
+    min-height: 208px;
+    min-width: 360px;
+    border-radius: 6px; } }
+
+@media (min-width: 1000px) {
+  .main-content__img {
+    min-height: 307px;
+    min-width: 531px; } }
+
 body {
   font-family: 'TT Lakes';
-  background-color: #FFFFFF;
+  background-color: #F8F8F8;
   color: #1B1C21;
   opacity: 1; }
 
 .opacity {
   opacity: 0.1;
   transition-duration: 1s; }
+
+.btn-ic {
+  border: 0;
+  background: none;
+  padding: 0; }
 
 
 /*# sourceMappingURL=style.css.map*/
