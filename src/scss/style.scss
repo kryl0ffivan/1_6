@@ -3,11 +3,18 @@ $bgColor: #F8F8F8;
 $dopBgColor:#FFFFFF;
 $text: #1B1C21;
 $elementColor: #41F6D7;
+%divider{
+    border-right: 2px solid #EAEAEA;
+    background: #EAEAEA;
+    height: 32px;
+    border-radius: 1px;
+}
 
 @import './normalize.scss';
 @import '../scss/fonts.scss';
 @import './header.scss';
 @import './burger-menu.scss';
+@import './main-head.scss';
 
 
 
@@ -20,5 +27,10 @@ body {
 .opacity{
   opacity: 0.1;
   transition-duration: 1s;
+}
+.btn-ic{
+  border:0;
+  background: none;
+  padding: 0;
 }
 
