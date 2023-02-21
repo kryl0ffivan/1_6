@@ -10,11 +10,31 @@ $elementColor: #41F6D7;
     border-radius: 1px;
 }
 
+%up{
+        content: '';
+        position: relative;
+        top: 5px;
+        background: url('../img/ic-expand-down.svg') no-repeat;
+        width:7.41px;
+        height:10.29px;
+}
+
+%down{  
+        content: '';
+        position: relative;
+        top: 5px;
+        background: url('../img/ic-expand-up.svg') no-repeat;
+        width:7.41px;
+        height:10.29px;
+}
 @import './normalize.scss';
 @import '../scss/fonts.scss';
 @import './header.scss';
 @import './burger-menu.scss';
 @import './main-head.scss';
+@import './main-brands.scss';
+@import './main-technic.scss';
+
 
 
 

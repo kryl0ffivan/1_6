@@ -1,7 +1,18 @@
 .main {
  background-color: $bgColor;
 		&__head {
+      padding-bottom: 24px;
 		}
+    @media (min-width: 768px){
+    &__head {
+      padding-bottom: 32px;
+		}
+    }
+    @media (min-width: 1366px) {
+    &__head {
+      padding-bottom: 50px;
+		}
+    }
 
 		&__content {
 		}
@@ -25,7 +36,7 @@
         padding-bottom: 15px;
       }
     }
-
+  
 
 		&__title {
       position: relative;
@@ -139,8 +150,9 @@
       padding-bottom:16px;
 		}
 }
-   @media (min-width: 768px){
+   @media (min-width: 640px){
       .content{
+        flex-wrap: nowrap;
         padding: 0 24px;
       }
     }
@@ -172,12 +184,7 @@ letter-spacing: 0.2px;
       line-height: 24px;
       letter-spacing: -0.2px;
       &::before{
-        content: '';
-        position: relative;
-        top: 5px;
-        background: url('../img/ic-expand-down.svg') no-repeat;
-        width:7.41px;
-        height:10.29px;
+       @extend %down
        
       }
       
@@ -197,12 +204,7 @@ letter-spacing: 0.2px;
       line-height: 24px;
       letter-spacing: -0.2px;
       &::before{
-        content: '';
-        position: relative;
-        top: 5px;
-        background: url('../img/ic-expand-up.svg') no-repeat;
-        width:7.41px;
-        height:10.29px;
+@extend %up
 
 }
 }
@@ -222,19 +224,18 @@ letter-spacing: 0.2px;
     padding-top: 20px;
   }
 }
-.main-content {
+.content {
 
 
 		&__img {
         background-image: url('../img/Mask.png');
         background-repeat: no-repeat;
-        background-position: center;
         background-size: contain;
         min-height: 176px;
-        min-width: 320px;
+        min-width: 100%;
 
 		}
-    @media (min-width: 768px) {
+    @media (min-width: 640px) {
   &__img{
         min-height: 208px;
             min-width: 360px;
