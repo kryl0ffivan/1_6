@@ -1,0 +1,267 @@
+
+.price {
+
+		&__title {
+        display: flex;
+   align-items: center;
+   background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
+   box-shadow: 0 -1px 0 0 $shadowColor;
+   height: 80px;
+   top: calc(50% - 48px/2 - 77px);
+    padding-left: 16px;
+   font-size: 16px;
+   line-height: 24px;
+   letter-spacing: -0.2px;
+   color: #7E7E82;
+   text-transform: uppercase;
+		}
+        @media (min-width: 768px) {
+      &__title {
+        padding-left:24px;
+    }
+  }
+    @media (min-width: 1366px) {
+      &__title {
+        padding-left:32px;
+        
+    }
+  }
+
+		&__container {
+  
+  
+  padding:40px 16px;
+  padding-top: 16px;
+		}
+    @media (min-width: 768px) {
+    &__container{
+ 
+  padding:47px 24px;
+  padding-top: 24px;
+ 
+}
+  }
+    @media (min-width: 1366px) {
+    &__container{
+
+  padding: 50px 32px;
+  padding-top: 24px;
+  
+}
+    }
+
+		&__wrapper {
+
+       @media (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 0;
+ }
+		}
+
+		&__slide {
+  display: flex;
+  flex-direction: column;
+  width:260px;
+  height:200px;
+  justify-content: left;
+  gap:36px;
+ padding:36px 16px;
+ padding-bottom: 0;
+  font-size: 14px;
+line-height: 18px;
+letter-spacing: 0.2px;
+      @media (min-width: 768px) {
+  display: grid;
+  grid-template-columns: minmax(388px, 2.33fr) minmax(96px, 1fr) minmax(96px, 1fr) minmax(155px, 1fr);
+   height: auto;
+  border: none;
+  width:auto;
+  box-shadow: 0  -18px 0 -17px #EAEAEA;
+  padding: 0;
+   gap:0;
+align-items: center;
+border-radius: 0;
+		}
+          @media (min-width: 1180px){
+    max-width: 1056px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+    }
+  @media (min-width: 768px) {
+    &__slide:nth-last-child(1) {
+	border-radius: 0 0 6px 6px;
+}
+  }
+  @media (min-width: 768px) {
+      &__slide:nth-child(2) {
+      border-radius: 6px 6px 0 0;
+      box-shadow: none;
+    }
+}
+  
+
+  &__heading{
+
+    display: none;
+    grid-template-columns: minmax(388px, 2.33fr) minmax(96px, 1fr) minmax(96px, 1fr) minmax(125px, 1fr);
+    width:auto;
+    height: auto;
+   font-size: 14px;
+  line-height: 16px;
+  color: #7E7E82;
+max-width: 1056px;
+mix-blend-mode: normal;
+opacity: 0.72;
+
+   @media (min-width: 768px) {
+      display: grid;
+      min-width: 720px;
+   }
+          @media (min-width: 1180px){
+      padding-left: 24px;
+    padding-right: 24px;
+  }
+  }
+		&__service {
+      position: relative;
+      &::before{
+        content:'Ремонтные услуги';
+        position:absolute;
+        top: -15px;
+        font-family: 'TT Lakes';
+        font-size: 14px;
+        line-height: 16px;
+        color: #7E7E82;
+        mix-blend-mode: normal;
+        opacity: 0.72;
+         @media (min-width: 768px) {
+          content:none;
+      }
+
+		}
+      @media (min-width: 768px) {
+ padding:23px 16px;
+ padding-right: 0;
+ 
+      }
+  }
+
+		&__cost {
+      position:relative;
+ 
+           &::before{
+        content:'Цена';
+        position:absolute;
+        top: -15px;
+        font-family: 'TT Lakes';
+        font-size: 14px;
+        line-height: 16px;
+        color: #7E7E82;
+        mix-blend-mode: normal;
+        opacity: 0.72;
+   @media (min-width: 768px) {
+              
+        content:none;
+      
+              }
+
+      }
+       @media (min-width: 768px) {
+      padding:23px 0;
+      
+      }
+      
+		}
+
+		&__date {
+      position: relative;
+           &::before{
+        content:'Срок';
+        position:absolute;
+        top: -15px;
+        font-family: 'TT Lakes';
+        font-size: 14px;
+        line-height: 16px;
+        color: #7E7E82;
+        mix-blend-mode: normal;
+        opacity: 0.72;
+               @media (min-width: 768px) {
+          content: none;
+      }
+    }
+         @media (min-width: 768px) {
+   padding:23px 0;
+  
+      }
+    }
+
+		&__content {
+  width:288px;
+ padding-top:16px;
+ padding-bottom: 16px;
+  font-size: 14px;
+line-height: 20px;
+letter-spacing: 0.2px;
+       @media (min-width: 500px) {
+    width: 421px;
+    padding-top: 24px;
+  
+      }
+		}
+
+		&__btn {
+      border:none;
+      background: none;
+      padding: 0;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: -0.2px;
+width: 199px;
+text-align: left;
+&::after{
+  position: relative;
+      top:7.5px;
+      display: inline-block;
+      content: '';
+      background: url('../img/more.svg')no-repeat;
+          width:24px;
+        height:24px;
+    
+    }
+     @media (min-width: 500px) {
+      width: auto;
+     }
+  }
+}
+.swiper {
+}
+.my-swiper {
+}
+
+
+.swiper-slide {
+
+		&__order {
+     position: absolute;
+     border: none;
+     background: none;
+     bottom: 16px;
+     right: 16px;
+      display: flex;
+      justify-content:flex-end;
+      @media (min-width: 768px) {
+        display: block;
+      position: static;
+   padding:23px 16px;
+   padding-left: 0;
+      }
+     
+ 
+		}
+}
+.swiper-pagination {
+}

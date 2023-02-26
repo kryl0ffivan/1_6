@@ -34,6 +34,9 @@ $elementColor: #41F6D7;
 @import './main-head.scss';
 @import './main-brands.scss';
 @import './main-technic.scss';
+@import './main__price.scss';
+@import './footer.scss';
+@import './modal.scss';
 
 
 
@@ -43,6 +46,11 @@ body {
   background-color: $bgColor;
   color: $text;
   opacity: 1;
+  overflow-x: hidden;
+     @media (min-width: 1440px) {
+    max-width: 1440px;
+    margin:auto;
+   }
 }
 .opacity{
   opacity: 0.1;
@@ -54,3 +62,10 @@ body {
   padding: 0;
 }
 
+.main-section{
+  position: relative;
+    display: flex;
+   flex-direction: column;
+   z-index: 0;
+
+}
