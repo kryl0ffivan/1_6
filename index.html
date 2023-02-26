@@ -8,6 +8,7 @@
     <title>Макет 1.6</title>
   <link href="style.css" rel="stylesheet"></head>
   <body>
+   <div class="interactive-section">
     <section class="menu-burger">
       
         <div class="menu-burger__section section-head">
@@ -56,8 +57,6 @@
       </button>
    </div>
         </div>
-        
-      
         <div class="menu-burger__section section-burger-footer">
             <div class="section-burger-footer__contact contact">
           <button class="call btn-ic">
@@ -84,10 +83,59 @@
             <p>CH</p>
          </button>
       </div>
-  
-      </div>
       
+      </div>
     </section>
+    <section class="modal modal-feedback">
+      <div class="modal__top modal-top">
+         <bottom class="modal-top__close close-feedback">
+            <img src="./img/burger-close.svg">
+         </bottom>
+      </div>
+      <div class="modal__main modal-main">
+          <div class="modal-main__title">Обратная связь</div>
+         <form class="modal-main__form modal-form" action="#">
+            
+               <input class="modal-form__input-box" type="text" placeholder="Имя">
+               <input class="modal-form__input-box" type="tel" placeholder="Телефонный номер">
+               <input class="modal-form__input-box" type="email" placeholder="Электронная почта">
+              <textarea class="modal-form__input-box modal-form__message-box" placeholder="Сообщение"></textarea>
+            <div class="modal-form__content">
+               Нажимая “отправить”, вы даете согласие на <span class="modal-form__content--red">обработку персональных данных </span>
+                и соглашаетесь с нашей <span class="modal-form__content--red"> политикой конфиденциальности </span>
+            </div>
+             
+              <button class="modal-form__btn" type="submit"> 
+               <img src="./img/to send.png">
+              </button>
+         </form>
+      </div>
+    </section>
+       <section class="modal modal-call">
+      <div class="modal__top modal-top">
+         <bottom class="modal-top__close close-call">
+            <img src="./img/burger-close.svg">
+         </bottom>
+         
+      </div>
+      <div class="modal__main modal-main">
+         <div class="modal-main__title">Заказать звонок</div>
+         <form class="modal-main__form modal-form" action="#">
+            
+         <input class="modal-form__input-box" type="tel" placeholder="Телефонный номер">
+   
+            <div class="modal-form__content">
+               Нажимая “отправить”, вы даете согласие на <span class="modal-form__content--red">обработку персональных данных </span>
+                и соглашаетесь с нашей <span class="modal-form__content--red"> политикой конфиденциальности </span>
+            </div>
+             
+              <button class="modal-form__btn" type="submit"> 
+               <img src="./img/to send.png">
+              </button>
+         </form>
+      </div>
+    </section>
+    </div>
     <div class="main-section">
     <header class="header">
         <div class="header__section section">
@@ -108,22 +156,16 @@
         </div>
         <div class="header__section section">
           <div class="section__contact">
-          <div class="call">
-            <a class="call__link" href="#">
-              <img class="call__img" src="./img/call.svg" alt="call">
-            </a>
-          </div>
+         <button class="call btn-ic">
+           <img class="call__img" src="./img/call.svg" alt="call">
+          </button>
         
-        <div class="chat">
-            <a class="chat__link" href="#">
+        <button class="chat btn-ic">
               <img class="chat__img" src="img/chat.svg" alt="chat">
-            </a>
-        </div>
-        <div class="profile">
-            <a class="profile__link" href="#">
+        </button>
+        <button class="profile btn-ic">
               <img class="profile__img" src="img/profile.svg" alt="profile">
-            </a>
-        </div>
+        </button>
         </div>
         <div class="section__status status">
         <div class="submit">
@@ -295,8 +337,10 @@
             </button>
          </div>
       </div>
+   
       <div class="swiper-pagination"></div>
  <button class="brands__limiter-btn">Показать все</button>
+ </div>
  </div> 
  </div>
  <div class="main__technic technic">
@@ -332,7 +376,7 @@
          </div>
          </div>
             <div class="swiper-slide technic__slide">
-            <div class="swiper-slide__view view">Ремонт  мониторов<div class="view__text">
+            <div class="swiper-slide__view view"><div class="view__text">Ремонт  мониторов
          </div>
             <button class="swiper-slide__ic-go btn-ic">
               <img src="./img/brands/go.svg" alt="icon-go">
@@ -364,7 +408,8 @@
          </div>
          </div>
             <div class="swiper-slide technic__slide">
-            <div class="swiper-slide__view view">Ремонт  мониторов<div class="view__text">
+            <div class="swiper-slide__view view">
+               <div class="view__text">Ремонт  мониторов
          </div>
             <button class="swiper-slide__ic-go btn-ic">
               <img src="./img/brands/go.svg" alt="icon-go">
@@ -377,8 +422,88 @@
  <button class="technic__limiter-btn">Показать все</button>
     </div>
  </div>
-  </div></div></main>
-    <footer></footer>
+ </div>
+ <div class="main__price price">
+   <div class="price__title">
+      Цены на услуги
+   </div>
+     <div class="price__container">
+      <div class="swiper my-swiper" data="mobile">
+      <div class="swiper-wrapper swiper-wrapper--height price__wrapper">
+               <div class="price__heading">
+               <div class="price__service">Ремонтные услуги</div>
+               <div class="price__cost">Цена</div>
+               <div class="price__date">Срок</div>
+               </div>
+            <div class="swiper-slide price__slide">
+               <div class="price__service">Тестирование с выдачей технического заключения</div>
+               <div class="price__cost">1 000 ₽</div>
+               <div class="price__date">30-120 мин</div>
+            <button class="swiper-slide__order">
+              <img src="./img/order.png" alt="order">
+            </button>
+         </div>
+                  <div class="swiper-slide price__slide">
+                     
+               <div class="price__service">Замена дисплея</div>
+               <div class="price__cost">1 000 ₽</div>
+               <div class="price__date">30-120 мин</div>
+            <button class="swiper-slide__order">
+              <img src="./img/order.png" alt="order">
+            </button>
+         </div>
+                     <div class="swiper-slide price__slide">
+               <div class="price__service">Диагностика</div>
+               <div class="price__cost">Бесплатно</div>
+               <div class="price__date">30 мин</div>
+            <button class="swiper-slide__order">
+              <img src="./img/order.png" alt="order">
+            </button>
+         </div>
+                     <div class="swiper-slide price__slide">
+               <div class="price__service">Замена полифонического динамика</div>
+               <div class="price__cost">1 000 ₽</div>
+               <div class="price__date">30-120 мин</div>
+            <button class="swiper-slide__order">
+              <img src="./img/order.png" alt="order">
+            </button>
+         </div>
+                     <div class="swiper-slide price__slide">
+               <div class="price__service">Замена программного обеспечения</div>
+               <div class="price__cost">1 000 ₽</div>
+               <div class="price__date">30-120 мин</div>
+            <button class="swiper-slide__order">
+              <img src="./img/order.png" alt="order">
+            </button>
+         </div>
+         
+         
+      </div>
+      <div class="swiper-pagination"></div>
+ </div>
+ <div class="price__content">Все цены указаны с учетом НДС. 
+   Стоимость ремонта указана на единичную услугу. 
+   Для получения коммерческого предложения на постоянное обслуживание, 
+   оставьте заявку.</div>
+   <button class="price__btn">Получить коммерческое предложение</button>
+ </div>
+ </div>
+  </main>
+    <footer class="footer">
+      
+      <div class="footer__section">
+
+         © 2019 CPS
+Разработано командой Apesong 
+      </div>
+      <div class="footer__section">
+         Политика конфиденциальности
+      </div>
+      <div class="footer__section">
+         Информация, размещенная на данной странице, не является публичной офертой
+      </div>
+     
+    </footer>
     <script media="screen and (max-device-width: 767px)" src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="./js/bundle.js"></script></div></body>
 </html>
