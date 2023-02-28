@@ -3,7 +3,7 @@
 import '../scss/style.scss'
 import './menu-burger'
 import './limiter-btn'
-import './main'
+import './swiper'
 import './modal'
 
 

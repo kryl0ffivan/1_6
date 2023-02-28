@@ -2,56 +2,30 @@
 .price {
 
 		&__title {
-        display: flex;
-   align-items: center;
-   background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
-   box-shadow: 0 -1px 0 0 $shadowColor;
-   height: 80px;
-   top: calc(50% - 48px/2 - 77px);
-    padding-left: 16px;
-   font-size: 16px;
-   line-height: 24px;
-   letter-spacing: -0.2px;
-   color: #7E7E82;
-   text-transform: uppercase;
-		}
-        @media (min-width: 768px) {
-      &__title {
+   @extend %head;
+    @media (min-width: 768px) {
         padding-left:24px;
     }
-  }
     @media (min-width: 1366px) {
-      &__title {
         padding-left:32px;
-        
     }
-  }
+	}
 
 		&__container {
-  
-  
   padding:40px 16px;
   padding-top: 16px;
-		}
-    @media (min-width: 768px) {
-    &__container{
- 
+   @media (min-width: 768px) {
   padding:47px 24px;
   padding-top: 24px;
- 
-}
   }
     @media (min-width: 1366px) {
-    &__container{
-
   padding: 50px 32px;
   padding-top: 24px;
   
-}
-    }
-
+  }
+  }
+   
 		&__wrapper {
-
        @media (min-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -73,7 +47,7 @@
   font-size: 14px;
 line-height: 18px;
 letter-spacing: 0.2px;
-      @media (min-width: 768px) {
+    @media (min-width: 768px) {
   display: grid;
   grid-template-columns: minmax(388px, 2.33fr) minmax(96px, 1fr) minmax(96px, 1fr) minmax(155px, 1fr);
    height: auto;
@@ -85,7 +59,7 @@ letter-spacing: 0.2px;
 align-items: center;
 border-radius: 0;
 		}
-          @media (min-width: 1180px){
+      @media (min-width: 1180px){
     max-width: 1056px;
     padding-left: 24px;
     padding-right: 24px;
@@ -105,7 +79,6 @@ border-radius: 0;
   
 
   &__heading{
-
     display: none;
     grid-template-columns: minmax(388px, 2.33fr) minmax(96px, 1fr) minmax(96px, 1fr) minmax(125px, 1fr);
     width:auto;
@@ -128,6 +101,10 @@ opacity: 0.72;
   }
 		&__service {
       position: relative;
+            @media (min-width: 768px) {
+            padding:23px 16px;
+            padding-right: 0;
+      }
       &::before{
         content:'Ремонтные услуги';
         position:absolute;
@@ -141,18 +118,15 @@ opacity: 0.72;
          @media (min-width: 768px) {
           content:none;
       }
-
 		}
-      @media (min-width: 768px) {
- padding:23px 16px;
- padding-right: 0;
- 
-      }
+
   }
 
 		&__cost {
       position:relative;
- 
+     @media (min-width: 768px) {
+      padding:23px 0;
+      }
            &::before{
         content:'Цена';
         position:absolute;
@@ -163,22 +137,17 @@ opacity: 0.72;
         color: #7E7E82;
         mix-blend-mode: normal;
         opacity: 0.72;
-   @media (min-width: 768px) {
-              
+        @media (min-width: 768px) {      
         content:none;
-      
-              }
-
+        }
       }
-       @media (min-width: 768px) {
-      padding:23px 0;
-      
-      }
-      
-		}
+    }
 
 		&__date {
       position: relative;
+        @media (min-width: 768px) {
+        padding:23px 0;
+        }
            &::before{
         content:'Срок';
         position:absolute;
@@ -189,14 +158,11 @@ opacity: 0.72;
         color: #7E7E82;
         mix-blend-mode: normal;
         opacity: 0.72;
-               @media (min-width: 768px) {
+          @media (min-width: 768px) {
           content: none;
       }
     }
-         @media (min-width: 768px) {
-   padding:23px 0;
-  
-      }
+ 
     }
 
 		&__content {
@@ -209,7 +175,6 @@ letter-spacing: 0.2px;
        @media (min-width: 500px) {
     width: 421px;
     padding-top: 24px;
-  
       }
 		}
 
@@ -230,16 +195,11 @@ text-align: left;
       background: url('../img/more.svg')no-repeat;
           width:24px;
         height:24px;
-    
     }
      @media (min-width: 500px) {
       width: auto;
      }
   }
-}
-.swiper {
-}
-.my-swiper {
 }
 
 
@@ -263,5 +223,4 @@ text-align: left;
  
 		}
 }
-.swiper-pagination {
-}
+

@@ -2,67 +2,48 @@
  background-color: $bgColor;
 		&__head {
       padding-bottom: 24px;
-		}
-    @media (min-width: 768px){
-    &__head {
+   @media (min-width: 768px){
       padding-bottom: 32px;
-		}
     }
     @media (min-width: 1366px) {
-    &__head {
       padding-bottom: 50px;
-		}
     }
-
-		&__content {
 		}
-}
+  }
 .head {
-
 		&__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 24px 16px;
-		}
-     @media (min-width: 768px){
-      &__container{
+    @media (min-width: 768px){
         padding: 24px 24px;
-      }
     }
     @media (min-width: 1366px) {
-      &__container{
         padding-top: 42px;
         padding-bottom: 15px;
-        margin: 0 auto;
-      }
     }
-  
+	}
 
 		&__title {
+      font-family: 'TT Lakes Bold';
       position: relative;
       display: flex;
-      font-weight: 900;
+      font-weight:bold;
       font-size: 28px;
       line-height: 40px;
       letter-spacing: -0.6px;
       color: $text;
 &::before{
     content: '';
-    position:absolute;
-    left:11px;
+    @extend %highlight;
+    position: absolute;
     top: 4px;
-   border-right: 4px solid $elementColor;
-   background: $elementColor;
-   width: 8px;
-   height: 32px;
-   border-radius: 5px;
-   transform: translate(-35px);
-   transition-duration: 1ms;
+    transform: translate(-24px);
 		}
  @media (min-width: 768px){
   &::before{
-    left: 4px;
+   transform: translate(-32px);
   }
  }
   }
@@ -70,19 +51,16 @@
     display: none;
     align-items: center;
     column-gap: 32px;
-		}
     @media (min-width: 1366px) {
-      &__status{
     display: flex;
     column-gap: 32px;
-      }
     }
+  }
 }
 
 .submit-head {
-  background: none;
-  border: 0;
    &::before{
+    font-family: 'TT Lakes Medium';
     content: 'Оставить заявку';
     position: relative;
     top: -13px;
@@ -94,9 +72,8 @@
 }
 
 .check-status-head {
-    background: none;
-  border: 0;
     &::before{
+    font-family: 'TT Lakes Medium';
     content: 'Статус ремонта';
     position: relative;
     top: -13px;
@@ -105,126 +82,108 @@
     letter-spacing: -0.2px;
 }
 }
-::-webkit-scrollbar {
-  width: 0;
-}
 .side-main {
     display: flex;
     flex-wrap: nowrap;
     overflow-y:auto;
      padding-top: 24px;
+     @media (min-width: 768px) {
+        padding-top: 32px;
+    }
+  @media(min-width: 1366px){
+        flex-wrap: wrap;
+        padding-top:8px;  
+  }
 		&__btn {
-    background: #F8F8F8;
-    font-size: 16px;
+    background: none;
     line-height: 24px;
     min-width: fit-content;
     text-align: center;
     padding: 8px 9px 8px 16px;
-    color: #7E7E82;
+    color: $dopText;
     border: 2px solid transparent;
     &:hover{
     border: 2px solid  #B8FFEC;
-    background: #FFFFFF;
+    background: $dopBgColor;
     border-radius: 6px;
     }
   }  
 }
-@media (min-width: 768px) {
-    .side-main{
-        padding-top: 32px;
-    }
-  }
-  @media(min-width: 1366px){
-    .side-main{
-        flex-wrap: wrap;
-        padding-top:8px;
-    }
-}
+
 .content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-   padding: 0 16px;
-   
-   
+  padding: 0 16px;
+  @media (min-width: 640px){
+        flex-wrap: nowrap;
+        padding: 0 24px;
+    }
+  @media (min-width: 1366px){
+        padding: 0 34px;
+    }
 		&__section {
       padding-bottom:16px;
 		}
 }
-   @media (min-width: 640px){
-      .content{
-        flex-wrap: nowrap;
-        padding: 0 24px;
-      }
-    }
-    @media (min-width: 1366px) {
-      .content{
-        padding: 0 34px;
-      }
-    }
+
 @media(min-width: 768px){
 .main-content {
   gap: 16px;
 }
+
 }
 .text {
-  width: 288px;
+width: 288px;
 overflow:hidden;
 font-size: 14px;
 line-height: 18px;
 letter-spacing: 0.2px;
-
-
+@media (min-width: 768px) {
+  width: 312px;
+  }
+@media (min-width: 1366px) {
+    padding-top: 20px;
+  }
 		&__limiter-btn {
+       font-family: 'TT Lakes Medium';
       padding-top:16px;
       display:flex;
       background: none;
       gap: 16px;
       border: none;
-      font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.2px;
+       @media (min-width: 768px) {
+      padding-top:10px;
+    }
       &::before{
-       @extend %down
-       
+       @extend %up
       }
-      
 		}
-		}
+	}
 
 .text--height {
   height: 90px;
+  @media (min-width: 768px){
+    height: 160px;
+  }
 }
 .text__limiter-btn--closer {
+      font-family: 'TT Lakes Medium';
       padding-top:16px;
       display:flex;
       background: none;
       gap: 16px;
       border: none;
-      font-size: 16px;
       line-height: 24px;
       letter-spacing: -0.2px;
       &::before{
-@extend %up
+    @extend %down
 
-}
-}
-@media (min-width: 768px) {
-  .text{
-    width: 312px;
-    &__limiter-btn{
-      padding-top:10px;
     }
-  }
-  .text--height{
-  height: 160px;
 }
-}
-@media (min-width: 1366px) {
-  .text{
-    padding-top: 20px;
-  }
-}
+
 .content {
 
 
@@ -234,20 +193,16 @@ letter-spacing: 0.2px;
         background-size: contain;
         min-height: 176px;
         min-width: 100%;
-
-		}
-    @media (min-width: 640px) {
-  &__img{
+        @media (min-width: 640px) {
         min-height: 208px;
-            min-width: 360px;
-            border-radius: 6px;
+        min-width: 360px;
+        border-radius: 6px;
             
-  }
-}
-   @media (min-width: 1000px) {
-        &__img {
-            min-height: 307px;
-            min-width: 531px;
         }
-}
+       @media (min-width: 1000px) {
+        min-height: 307px;
+        min-width: 531px;
+    }
+		}
+
 }
