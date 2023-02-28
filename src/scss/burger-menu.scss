@@ -143,14 +143,17 @@ font-weight: 900;
 }
 
 .email {
+  font-family: 'TT Lakes Medium';
     text-decoration: none;
   color: $text;
 }
 .number {
+  font-family: 'TT Lakes Bold';
   text-decoration: none;
   color: $text;
 }
 .lang {
+  font-family: 'TT Lakes Medium';
   display: flex;
   gap: 7px;
 }
