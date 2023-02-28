@@ -1,11 +1,35 @@
 @charset "UTF-8";
 .section__status::before {
+  content: '';
   border-right: 2px solid #EAEAEA;
   background: #EAEAEA;
   height: 32px;
   border-radius: 1px; }
 
-.text__limiter-btn--closer::before, .brands__limiter-btn::before, .technic__limiter-btn::before {
+.burger-nav__btn::before, .head__title::before {
+  position: relative;
+  border-right: 4px solid #41F6D7;
+  background: #41F6D7;
+  width: 8px;
+  height: 32px;
+  border-radius: 5px;
+  transition-duration: 1ms; }
+
+.header, .brands__title, .technic__title, .price__title {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
+  box-shadow: 0 -1px 0 0 #d9fff5;
+  height: 80px;
+  top: calc(50% - 48px/2 - 77px);
+  padding-left: 16px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #7E7E82;
+  text-transform: uppercase; }
+
+.brands__limiter-btn::before, .technic__limiter-btn::before, .text__limiter-btn::before {
   content: '';
   position: relative;
   top: 5px;
@@ -13,13 +37,35 @@
   width: 7.41px;
   height: 10.29px; }
 
-.text__limiter-btn::before, .brands .brands__limiter-btn--closer::before, .technic__limiter-btn--closer::before {
+.brands .brands__limiter-btn--closer::before, .technic__limiter-btn--closer::before, .text__limiter-btn--closer::before {
   content: '';
   position: relative;
   top: 5px;
   background: url(./static/ic-expand-up.svg) no-repeat;
   width: 7.41px;
   height: 10.29px; }
+
+.brands__limiter-btn, .technic__limiter-btn {
+  font-family: 'TT Lakes Medium';
+  display: none;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  gap: 16px;
+  padding-top: 24px;
+  color: #1B1C21;
+  background: none;
+  border: none; }
+
+.brands .brands__limiter-btn--closer, .technic__limiter-btn--closer {
+  font-family: 'TT Lakes Medium';
+  display: none;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  padding-top: 24px;
+  gap: 16px;
+  color: #1B1C21;
+  background: none;
+  border: none; }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -352,24 +398,21 @@ template {
   background: #FFFFFF;
   box-shadow: 0 1px 0 0 #d9fff5;
   min-height: 87px;
-  display: flex;
   justify-content: space-between;
-  justify-items: center;
-  padding: 0 16px; }
+  padding: 0 16px;
+  z-index: 1; }
+  @media (min-width: 768px) {
+    .header {
+      padding: 0 24px; } }
+  @media (min-width: 1366px) {
+    .header {
+      display: none; } }
   .header__section {
     display: flex;
     -moz-column-gap: 16px;
          column-gap: 16px;
     justify-content: center;
     align-items: center; }
-
-@media (min-width: 768px) {
-  .header {
-    padding: 0 24px; } }
-
-@media (min-width: 1366px) {
-  .header {
-    display: none; } }
 
 @media (min-width: 425px) {
   .section__burger {
@@ -391,13 +434,9 @@ template {
        column-gap: 16px;
   justify-content: center;
   align-items: center; }
-
-@media (min-width: 510px) {
-  .section__contact {
-    display: flex; } }
-
-.section__status::before {
-  content: ''; }
+  @media (min-width: 510px) {
+    .section__contact {
+      display: flex; } }
 
 .status {
   display: flex;
@@ -409,7 +448,7 @@ template {
 .menu-burger {
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -200%;
   background: #FFFFFF;
   display: flex;
   flex-direction: column;
@@ -418,25 +457,23 @@ template {
   height: 200%;
   z-index: 1;
   overflow: auto; }
+  @media (min-width: 360px) {
+    .menu-burger {
+      width: 360px; } }
+  @media (min-width: 1366px) {
+    .menu-burger {
+      position: sticky;
+      float: left;
+      width: 320px;
+      box-shadow: none;
+      height: 150vmax;
+      overflow: hidden; } }
   .menu-burger__section {
     padding: 0 16px;
     display: flex; }
-  @media (min-width: 360px) {
-    .menu-burger__section {
-      padding: 0 24px; } }
-
-@media (min-width: 360px) {
-  .menu-burger {
-    width: 360px;
-    float: left; } }
-
-@media (min-width: 1366px) {
-  .menu-burger {
-    position: sticky;
-    width: 320px;
-    box-shadow: none;
-    height: 150vmax;
-    overflow: hidden; } }
+    @media (min-width: 360px) {
+      .menu-burger__section {
+        padding: 0 24px; } }
 
 .section-head {
   align-items: center;
@@ -461,31 +498,23 @@ template {
   min-width: -moz-fit-content;
   min-width: fit-content;
   padding-bottom: 32px; }
-
-@media (min-width: 768px) {
-  .section-nav {
-    padding-top: 24px;
-    padding-bottom: 268px; } }
+  @media (min-width: 768px) {
+    .section-nav {
+      padding-top: 24px;
+      padding-bottom: 268px; } }
 
 .burger-nav {
+  font-family: 'TT Lakes Medium';
   display: inline-flex;
   flex-direction: column; }
   .burger-nav__btn::before {
     content: '';
-    position: relative;
-    left: 10px;
+    transform: translate(-24px);
     top: 13px;
-    border-right: 4px solid #41F6D7;
-    background: #41F6D7;
-    width: 8px;
-    height: 32px;
-    border-radius: 5px;
-    transform: translate(-35px);
-    transition-duration: 1ms;
     opacity: 0; }
-  @media (min-width: 360px) {
-    .burger-nav__btn::before {
-      left: 3px; } }
+    @media (min-width: 360px) {
+      .burger-nav__btn::before {
+        transform: translate(-32px); } }
   .burger-nav__btn:hover::before {
     opacity: 1; }
 
@@ -530,6 +559,14 @@ template {
   letter-spacing: -0.6px;
   font-weight: 900; }
 
+.email {
+  text-decoration: none;
+  color: #1B1C21; }
+
+.number {
+  text-decoration: none;
+  color: #1B1C21; }
+
 .lang {
   display: flex;
   gap: 7px; }
@@ -544,40 +581,38 @@ template {
 .menu-burger--closer {
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -200%;
   transition-duration: 700ms; }
 
 .main {
   background-color: #F8F8F8; }
   .main__head {
     padding-bottom: 24px; }
-  @media (min-width: 768px) {
-    .main__head {
-      padding-bottom: 32px; } }
-  @media (min-width: 1366px) {
-    .main__head {
-      padding-bottom: 50px; } }
+    @media (min-width: 768px) {
+      .main__head {
+        padding-bottom: 32px; } }
+    @media (min-width: 1366px) {
+      .main__head {
+        padding-bottom: 50px; } }
 
 .head__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 24px 16px; }
-
-@media (min-width: 768px) {
-  .head__container {
-    padding: 24px 24px; } }
-
-@media (min-width: 1366px) {
-  .head__container {
-    padding-top: 42px;
-    padding-bottom: 15px;
-    margin: 0 auto; } }
+  @media (min-width: 768px) {
+    .head__container {
+      padding: 24px 24px; } }
+  @media (min-width: 1366px) {
+    .head__container {
+      padding-top: 42px;
+      padding-bottom: 15px; } }
 
 .head__title {
+  font-family: 'TT Lakes Bold';
   position: relative;
   display: flex;
-  font-weight: 900;
+  font-weight: bold;
   font-size: 28px;
   line-height: 40px;
   letter-spacing: -0.6px;
@@ -585,64 +620,55 @@ template {
   .head__title::before {
     content: '';
     position: absolute;
-    left: 11px;
     top: 4px;
-    border-right: 4px solid #41F6D7;
-    background: #41F6D7;
-    width: 8px;
-    height: 32px;
-    border-radius: 5px;
-    transform: translate(-35px);
-    transition-duration: 1ms; }
+    transform: translate(-24px); }
   @media (min-width: 768px) {
     .head__title::before {
-      left: 4px; } }
+      transform: translate(-32px); } }
 
 .head__status {
   display: none;
   align-items: center;
   -moz-column-gap: 32px;
        column-gap: 32px; }
+  @media (min-width: 1366px) {
+    .head__status {
+      display: flex;
+      -moz-column-gap: 32px;
+           column-gap: 32px; } }
 
-@media (min-width: 1366px) {
-  .head__status {
-    display: flex;
-    -moz-column-gap: 32px;
-         column-gap: 32px; } }
+.submit-head::before {
+  font-family: 'TT Lakes Medium';
+  content: 'Оставить заявку';
+  position: relative;
+  top: -13px;
+  left: -8px;
+  font-size: 16px;
+  letter-spacing: -0.2px; }
 
-.submit-head {
-  background: none;
-  border: 0; }
-  .submit-head::before {
-    content: 'Оставить заявку';
-    position: relative;
-    top: -13px;
-    left: -8px;
-    font-size: 16px;
-    letter-spacing: -0.2px; }
-
-.check-status-head {
-  background: none;
-  border: 0; }
-  .check-status-head::before {
-    content: 'Статус ремонта';
-    position: relative;
-    top: -13px;
-    left: -8px;
-    font-size: 16px;
-    letter-spacing: -0.2px; }
-
-::-webkit-scrollbar {
-  width: 0; }
+.check-status-head::before {
+  font-family: 'TT Lakes Medium';
+  content: 'Статус ремонта';
+  position: relative;
+  top: -13px;
+  left: -8px;
+  font-size: 16px;
+  letter-spacing: -0.2px; }
 
 .side-main {
   display: flex;
   flex-wrap: nowrap;
   overflow-y: auto;
   padding-top: 24px; }
+  @media (min-width: 768px) {
+    .side-main {
+      padding-top: 32px; } }
+  @media (min-width: 1366px) {
+    .side-main {
+      flex-wrap: wrap;
+      padding-top: 8px; } }
   .side-main__btn {
-    background: #F8F8F8;
-    font-size: 16px;
+    background: none;
     line-height: 24px;
     min-width: -webkit-fit-content;
     min-width: -moz-fit-content;
@@ -656,31 +682,20 @@ template {
       background: #FFFFFF;
       border-radius: 6px; }
 
-@media (min-width: 768px) {
-  .side-main {
-    padding-top: 32px; } }
-
-@media (min-width: 1366px) {
-  .side-main {
-    flex-wrap: wrap;
-    padding-top: 8px; } }
-
 .content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 16px; }
+  @media (min-width: 640px) {
+    .content {
+      flex-wrap: nowrap;
+      padding: 0 24px; } }
+  @media (min-width: 1366px) {
+    .content {
+      padding: 0 34px; } }
   .content__section {
     padding-bottom: 16px; }
-
-@media (min-width: 640px) {
-  .content {
-    flex-wrap: nowrap;
-    padding: 0 24px; } }
-
-@media (min-width: 1366px) {
-  .content {
-    padding: 0 34px; } }
 
 @media (min-width: 768px) {
   .main-content {
@@ -692,40 +707,40 @@ template {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.2px; }
+  @media (min-width: 768px) {
+    .text {
+      width: 312px; } }
+  @media (min-width: 1366px) {
+    .text {
+      padding-top: 20px; } }
   .text__limiter-btn {
+    font-family: 'TT Lakes Medium';
     padding-top: 16px;
     display: flex;
     background: none;
     gap: 16px;
     border: none;
-    font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px; }
+    @media (min-width: 768px) {
+      .text__limiter-btn {
+        padding-top: 10px; } }
 
 .text--height {
   height: 90px; }
+  @media (min-width: 768px) {
+    .text--height {
+      height: 160px; } }
 
 .text__limiter-btn--closer {
+  font-family: 'TT Lakes Medium';
   padding-top: 16px;
   display: flex;
   background: none;
   gap: 16px;
   border: none;
-  font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px; }
-
-@media (min-width: 768px) {
-  .text {
-    width: 312px; }
-    .text__limiter-btn {
-      padding-top: 10px; }
-  .text--height {
-    height: 160px; } }
-
-@media (min-width: 1366px) {
-  .text {
-    padding-top: 20px; } }
 
 .content__img {
   background-image: url(./static/Mask.png);
@@ -733,49 +748,30 @@ template {
   background-size: contain;
   min-height: 176px;
   min-width: 100%; }
-
-@media (min-width: 640px) {
-  .content__img {
-    min-height: 208px;
-    min-width: 360px;
-    border-radius: 6px; } }
-
-@media (min-width: 1000px) {
-  .content__img {
-    min-height: 307px;
-    min-width: 531px; } }
+  @media (min-width: 640px) {
+    .content__img {
+      min-height: 208px;
+      min-width: 360px;
+      border-radius: 6px; } }
+  @media (min-width: 1000px) {
+    .content__img {
+      min-height: 307px;
+      min-width: 531px; } }
 
 .brands__container {
   flex-direction: column;
   padding: 24px 16px;
   padding-top: 16px; }
-
-@media (min-width: 768px) {
-  .brands__container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 32px 24px;
-    padding-top: 24px; } }
-
-@media (min-width: 1366px) {
-  .brands__container {
-    padding: 50px 32px;
-    padding-top: 24px;
-    margin: 0 auto; } }
-
-.brands__title {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
-  box-shadow: 0 -1px 0 0 #d9fff5;
-  height: 80px;
-  top: calc(50% - 48px/2 - 77px);
-  padding-left: 16px;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  color: #7E7E82;
-  text-transform: uppercase; }
+  @media (min-width: 768px) {
+    .brands__container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 32px 24px;
+      padding-top: 24px; } }
+  @media (min-width: 1366px) {
+    .brands__container {
+      padding: 50px 32px;
+      padding-top: 24px; } }
 
 @media (min-width: 768px) {
   .brands__title {
@@ -784,30 +780,6 @@ template {
 @media (min-width: 1366px) {
   .brands__title {
     padding-left: 32px; } }
-
-.brands__limiter-btn {
-  display: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  gap: 16px;
-  padding-top: 24px;
-  color: #1B1C21;
-  background: none;
-  border: none; }
-
-.brands .brands__limiter-btn--closer {
-  display: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  padding-top: 24px;
-  gap: 16px;
-  color: #1B1C21;
-  background: none;
-  border: none; }
 
 @media (min-width: 768px) {
   .brands__limiter-btn {
@@ -820,21 +792,23 @@ template {
 .swiper-wrapper {
   gap: 16px;
   display: flex; }
-
-@media (min-width: 768px) {
-  .swiper-wrapper {
-    display: flex;
-    -moz-column-gap: 21px;
-         column-gap: 21px;
-    flex-wrap: wrap;
-    overflow: hidden; } }
+  @media (min-width: 768px) {
+    .swiper-wrapper {
+      display: flex;
+      -moz-column-gap: 21px;
+           column-gap: 21px;
+      flex-wrap: wrap;
+      overflow: hidden; } }
+  @media (min-width: 1120px) {
+    .swiper-wrapper {
+      -moz-column-gap: 32px;
+           column-gap: 32px; } }
 
 .swiper-wrapper--height {
   height: auto; }
-
-@media (min-width: 768px) {
-  .swiper-wrapper--height {
-    height: 160px; } }
+  @media (min-width: 768px) {
+    .swiper-wrapper--height {
+      height: 160px; } }
 
 .brands__slide {
   justify-content: space-between;
@@ -847,14 +821,13 @@ template {
   border-radius: 6px;
   display: flex;
   width: 240px; }
+  @media (min-width: 768px) {
+    .swiper-slide {
+      width: 224px; } }
   .swiper-slide__bitmap {
     margin: 14px; }
   .swiper-slide__ic-go {
     margin: 14px; }
-
-@media (min-width: 768px) {
-  .swiper-slide {
-    width: 224px; } }
 
 .swiper-pagination {
   position: static;
@@ -868,25 +841,6 @@ template {
 .swiper-pagination-bullet-active {
   background: #B5B6BC !important; }
 
-@media (min-width: 1120px) {
-  .swiper-wrapper {
-    -moz-column-gap: 32px;
-         column-gap: 32px; } }
-
-.technic__title {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
-  box-shadow: 0 -1px 0 0 #d9fff5;
-  height: 80px;
-  top: calc(50% - 48px/2 - 77px);
-  padding-left: 16px;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  color: #7E7E82;
-  text-transform: uppercase; }
-
 @media (min-width: 768px) {
   .technic__title {
     padding-left: 24px; } }
@@ -899,44 +853,22 @@ template {
   display: flex;
   padding: 24px 16px;
   padding-top: 16px; }
-
-@media (min-width: 768px) {
-  .technic__container {
-    padding: 32px 24px;
-    padding-top: 24px; } }
-
-@media (min-width: 1366px) {
-  .technic__container {
-    padding: 50px 32px;
-    padding-top: 24px; } }
-
-.technic__limiter-btn {
-  display: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  gap: 16px;
-  padding-top: 24px;
-  color: #1B1C21;
-  background: none;
-  border: none; }
+  @media (min-width: 768px) {
+    .technic__container {
+      padding: 32px 24px;
+      padding-top: 24px; } }
+  @media (min-width: 1366px) {
+    .technic__container {
+      padding: 50px 32px;
+      padding-top: 24px; } }
 
 @media (min-width: 768px) {
   .technic__limiter-btn {
     display: inline-flex; } }
 
-.technic__limiter-btn--closer {
-  display: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  padding-top: 24px;
-  gap: 16px;
-  color: #1B1C21;
-  background: none;
-  border: none; }
+@media (min-width: 768px) {
+  .technic__limiter-btn--closer {
+    display: inline-flex; } }
 
 .technic__slide {
   height: 160px; }
@@ -956,24 +888,6 @@ template {
     padding: 15px; }
 
 @media (min-width: 768px) {
-  .technic__limiter-btn--closer {
-    display: inline-flex; } }
-
-.price__title {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(270deg, #FFFFFF 0%, #F8F8F8 98.61%);
-  box-shadow: 0 -1px 0 0 #d9fff5;
-  height: 80px;
-  top: calc(50% - 48px/2 - 77px);
-  padding-left: 16px;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  color: #7E7E82;
-  text-transform: uppercase; }
-
-@media (min-width: 768px) {
   .price__title {
     padding-left: 24px; } }
 
@@ -984,16 +898,14 @@ template {
 .price__container {
   padding: 40px 16px;
   padding-top: 16px; }
-
-@media (min-width: 768px) {
-  .price__container {
-    padding: 47px 24px;
-    padding-top: 24px; } }
-
-@media (min-width: 1366px) {
-  .price__container {
-    padding: 50px 32px;
-    padding-top: 24px; } }
+  @media (min-width: 768px) {
+    .price__container {
+      padding: 47px 24px;
+      padding-top: 24px; } }
+  @media (min-width: 1366px) {
+    .price__container {
+      padding: 50px 32px;
+      padding-top: 24px; } }
 
 @media (min-width: 768px) {
   .price__wrapper {
@@ -1064,6 +976,10 @@ template {
 
 .price__service {
   position: relative; }
+  @media (min-width: 768px) {
+    .price__service {
+      padding: 23px 16px;
+      padding-right: 0; } }
   .price__service::before {
     content: 'Ремонтные услуги';
     position: absolute;
@@ -1077,13 +993,12 @@ template {
     @media (min-width: 768px) {
       .price__service::before {
         content: none; } }
-  @media (min-width: 768px) {
-    .price__service {
-      padding: 23px 16px;
-      padding-right: 0; } }
 
 .price__cost {
   position: relative; }
+  @media (min-width: 768px) {
+    .price__cost {
+      padding: 23px 0; } }
   .price__cost::before {
     content: 'Цена';
     position: absolute;
@@ -1097,12 +1012,12 @@ template {
     @media (min-width: 768px) {
       .price__cost::before {
         content: none; } }
-  @media (min-width: 768px) {
-    .price__cost {
-      padding: 23px 0; } }
 
 .price__date {
   position: relative; }
+  @media (min-width: 768px) {
+    .price__date {
+      padding: 23px 0; } }
   .price__date::before {
     content: 'Срок';
     position: absolute;
@@ -1116,9 +1031,6 @@ template {
     @media (min-width: 768px) {
       .price__date::before {
         content: none; } }
-  @media (min-width: 768px) {
-    .price__date {
-      padding: 23px 0; } }
 
 .price__content {
   width: 288px;
@@ -1188,7 +1100,6 @@ template {
 
 .modal {
   position: fixed;
-  right: -200%;
   top: 0;
   background: #FFFFFF;
   display: flex;
@@ -1228,8 +1139,8 @@ template {
   right: 393px; }
 
 .modal-main__title {
+  font-family: 'TT Lakes Bold';
   display: flex;
-  font-weight: 900;
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.6px;
@@ -1284,8 +1195,11 @@ template {
   padding: 0;
   justify-content: flex-end; }
 
-.modal--open {
-  right: 0; }
+.modal--closer {
+  position: fixed;
+  top: 0;
+  right: -200%;
+  transition-duration: 500ms; }
 
 .modal--open {
   position: fixed;
@@ -1293,12 +1207,6 @@ template {
   right: 0;
   z-index: 100;
   transition-duration: 500ms; }
-
-.modal--closer {
-  position: fixed;
-  top: 0;
-  right: -200%;
-  transition-duration: 700ms; }
 
 body {
   font-family: 'TT Lakes';
@@ -1312,7 +1220,7 @@ body {
       margin: auto; } }
 
 .opacity {
-  opacity: 0.1;
+  opacity: 0.03;
   transition-duration: 1s; }
 
 .btn-ic {
@@ -1323,8 +1231,10 @@ body {
 .main-section {
   position: relative;
   display: flex;
-  flex-direction: column;
-  z-index: 0; }
+  flex-direction: column; }
+
+::-webkit-scrollbar {
+  width: 0; }
 
 
 /*# sourceMappingURL=style.css.map*/
