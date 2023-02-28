@@ -50,30 +50,36 @@
     }
 }
 .section-nav {
-  display: inline-flex;
+  display: flex;
    flex-direction: column;
-   gap: 32px;
+   gap: 24px;
    min-width: fit-content;
+   padding-top: 16px;
    padding-bottom: 32px;
    @media (min-width: 768px) {
       padding-top: 24px;
       padding-bottom: 268px;
-    
 }
+
 }
 
 .burger-nav {
   font-family: 'TT Lakes Medium';
-  display: inline-flex;
+    display: flex;
    flex-direction: column;
+   justify-content: left;
+   gap: 24px;
+   @media (min-width: 768px) {
+    gap: 32px;
+   }
 		&__btn::before{
     content: '';
    @extend %highlight;
-   transform: translate(-24px);
-   top:13px;
+    position: absolute;
+   transform: translate(-24px, -2px);
    opacity: 0;
     @media (min-width: 360px) {
-     transform: translate(-32px);
+     transform: translate(-31px, -2px);
   }
 
 } 
@@ -90,9 +96,10 @@
   line-height: 24px;
   letter-spacing: -0.20000000298023224px;
   padding: 0;
+  width: fit-content;
 
 }
-.btn p:hover{
+.btn span:hover{
   opacity: 0.5;
   transition-duration: 500ms;
 }
